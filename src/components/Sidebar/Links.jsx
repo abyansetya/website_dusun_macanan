@@ -51,7 +51,7 @@ const Links = (props) => {
           {item}
         </motion.a>
       ))}
-      <p className="bottom-0 absolute text-[13px]">© 2024 abyan setya.</p>
+      <p className="bottom-0 absolute text-[13px]">© 2025 Dusun Macanan.</p>
     </motion.div>
   );
 };

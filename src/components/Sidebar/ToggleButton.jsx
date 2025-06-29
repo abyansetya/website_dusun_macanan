@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ToggleButton(props) {
-  console.log("clicked");
+  const [isTop, setIsTop] = useState(true);
+  const strokeColor = isTop ? "white" : "black";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      setIsTop(scrollPosition < viewportHeight); // lebih responsif
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function toggle() {
     props.Open((prev) => !prev);
@@ -14,13 +26,17 @@ export default function ToggleButton(props) {
         onClick={toggle}
         className="w-full flex gap-2 align-center justify-between"
       >
-        <h1 className="text-black font-poppins text-[12px] mb-1 mr-2 cursor-pointer">
+        <h1
+          className={`${
+            isTop ? "text-white" : "text-gray-800"
+          } font-poppins text-[12px] mb-1 mr-2 cursor-pointer`}
+        >
           MENU
         </h1>
         <svg width="23" height="23" viewBox="0 0 23 23">
           <motion.path
             strokeWidth="3"
-            stroke="black"
+            stroke={strokeColor}
             strokeLinecap="round"
             variants={{
               closed: { d: "M 2 2.5 L 20 2.5" },
@@ -29,7 +45,7 @@ export default function ToggleButton(props) {
           />
           <motion.path
             strokeWidth="3"
-            stroke="black"
+            stroke={strokeColor}
             strokeLinecap="round"
             d="M 2 9.423 L 20 9.423"
             variants={{
@@ -39,7 +55,7 @@ export default function ToggleButton(props) {
           />
           <motion.path
             strokeWidth="3"
-            stroke="black"
+            stroke={strokeColor}
             strokeLinecap="round"
             variants={{
               closed: { d: "M 2 16.346 L 20 16.346" },
