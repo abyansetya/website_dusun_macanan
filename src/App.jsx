@@ -12,6 +12,10 @@ import {
 import styles from "./style";
 import Navbar from "./components/Navbar";
 
+import Hero from "./components/Hero";
+import Lokasi from "./components/Lokasi";
+import Pertanian from "./components/Pertanian";
+
 export default function DusunMacananProfile() {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,14 +27,6 @@ export default function DusunMacananProfile() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
@@ -86,217 +82,13 @@ export default function DusunMacananProfile() {
       </div>
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-blue-600/20"></div>
-        <div
-          className={`absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")] opacity-30`}
-        ></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="mb-8 relative">
-            <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-green-400 to-blue-500 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-green-200 via-blue-200 to-green-300 flex items-center justify-center">
-                <div className="text-center">
-                  <TreePine className="h-20 w-20 text-green-700 mx-auto mb-4" />
-                  <div className="text-green-800 font-semibold">
-                    Pemandangan Asri
-                  </div>
-                  <div className="text-green-600 text-sm">Dusun Macanan</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-800 mb-6">
-            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-              Dusun Macanan
-            </span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Sebuah dusun yang kaya akan kesenian tradisional, pertanian
-            berkelanjutan, dan keindahan alam yang memukau di tengah kehijauan
-            Indonesia
-          </p>
-
-          <button
-            onClick={() => scrollToSection("Lokasi")}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            <span>Jelajahi Dusun</span>
-            <ChevronDown className="h-5 w-5 animate-bounce" />
-          </button>
-        </div>
-      </section>
+      <Hero />
 
       {/* Lokasi Section */}
-      <section id="Lokasi" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <MapPin className="h-12 w-12 text-green-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Lokasi Geografis
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Terletak di wilayah yang strategis dengan akses mudah dan
-              pemandangan yang menakjubkan
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Informasi Lokasi
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">Provinsi: Jawa Tengah</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-gray-700">Kabupaten: Semarang</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">
-                      Ketinggian: 500-800 mdpl
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-gray-700">
-                      Luas Wilayah: ±2.5 km²
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-xl">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Karakteristik Geografis
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Dusun Macanan terletak di daerah perbukitan dengan topografi
-                  yang bergelombang. Wilayah ini dikelilingi oleh hutan bambu
-                  dan perkebunan yang hijau, menciptakan ekosistem yang seimbang
-                  dan udara yang sejuk sepanjang tahun.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-green-200 via-blue-200 to-green-300 rounded-2xl shadow-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-24 w-24 text-green-700 mx-auto mb-4" />
-                  <div className="text-green-800 font-semibold text-lg">
-                    Peta Lokasi
-                  </div>
-                  <div className="text-green-600">Dusun Macanan</div>
-                  <div className="text-green-500 text-sm mt-2">
-                    Koordinat: -7.2°S, 110.4°E
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Lokasi />
 
       {/* Pertanian Section */}
-      <section
-        id="Pertanian"
-        className="py-20 bg-gradient-to-br from-green-50 to-yellow-50"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Wheat className="h-12 w-12 text-green-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Pertanian Berkelanjutan
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Menerapkan sistem pertanian ramah lingkungan dengan hasil yang
-              berkelanjutan
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "Padi Organik",
-                description:
-                  "Budidaya padi dengan metode organik tanpa pestisida kimia",
-                icon: "🌾",
-              },
-              {
-                title: "Sayuran Hidroponik",
-                description:
-                  "Sistem tanam modern untuk menghasilkan sayuran berkualitas",
-                icon: "🥬",
-              },
-              {
-                title: "Ternak Ayam Kampung",
-                description: "Peternakan ayam kampung dengan pakan alami",
-                icon: "🐓",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  Filosofi Pertanian Kami
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Dusun Macanan menerapkan prinsip pertanian berkelanjutan yang
-                  menghormati alam. Kami menggunakan teknik tradisional yang
-                  dipadukan dengan inovasi modern untuk menghasilkan produk
-                  pertanian yang sehat dan ramah lingkungan.
-                </p>
-                <div className="flex items-center space-x-4 text-sm text-gray-600">
-                  <div className="flex items-center space-x-1">
-                    <Leaf className="h-4 w-4 text-green-500" />
-                    <span>100% Organik</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4 text-blue-500" />
-                    <span>Ekonomi Rakyat</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="w-full h-64 bg-gradient-to-br from-yellow-200 via-green-200 to-yellow-300 rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <Wheat className="h-16 w-16 text-green-700 mx-auto mb-2" />
-                    <div className="text-green-800 font-semibold">
-                      Hasil Pertanian
-                    </div>
-                    <div className="text-green-600 text-sm">
-                      Berkualitas Tinggi
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Pertanian />
 
       {/* Kesenian Section */}
       <section

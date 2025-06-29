@@ -23,6 +23,17 @@ const variants = {
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsTop(scrollPosition < 700); // ubah angka sesuai tinggi hero
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     // Use setTimeout to delay the appearance of the animation
@@ -55,7 +66,13 @@ export default function Navbar() {
       >
         <div className="flex items-center space-x-2">
           <TreePine className="h-8 w-8 text-green-600" />
-          <span className="text-xl font-bold text-gray-800">Dusun Macanan</span>
+          <span
+            className={`text-xl font-bold transition-colors duration-300 ${
+              isTop ? "text-white" : "text-gray-800"
+            }`}
+          >
+            Dusun Macanan
+          </span>
         </div>
       </motion.h1>
       <motion.div
