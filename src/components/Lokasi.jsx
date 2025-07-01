@@ -12,13 +12,16 @@ function Lokasi() {
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Lokasi Geografis
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Dusun Macanan menawarkan suasana pedesaan yang tenang dengan
-              pemandangan alam yang menakjubkan serta kekayaan budaya yang masih
-              terjaga.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-justify">
+              Dusun Macanan merupakan bagian dari Desa Tajuk, Kecamatan Getasan,
+              Kabupaten Semarang Tengah, dengan sebagian besar penduduk bermata
+              pencaharian sebagai petani. Walau terletak di daerah yang cukup
+              terpencil, suasana kehidupan di dusun ini tetap hangat, penuh
+              keceriaan, dan rasa kebersamaan. Mari kita telusuri lebih dalam
+              kehidupan masyarakat Dusun Macanan serta berbagai potensi yang
+              mereka miliki.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">

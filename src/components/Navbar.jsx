@@ -25,6 +25,13 @@ export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
   const [isTop, setIsTop] = useState(true);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -70,6 +77,7 @@ export default function Navbar() {
             className={`text-xl font-bold transition-colors duration-300 ${
               isTop ? "text-white" : "text-gray-800"
             }`}
+            onClick={() => scrollToSection("home")}
           >
             Dusun Macanan
           </span>

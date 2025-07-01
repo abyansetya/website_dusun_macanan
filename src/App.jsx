@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Lokasi from "./components/Lokasi";
 import Pertanian from "./components/Pertanian";
+import Kesenian from "./components/Kesenian";
 
 export default function DusunMacananProfile() {
   const [activeSection, setActiveSection] = useState("home");
@@ -91,95 +92,7 @@ export default function DusunMacananProfile() {
       <Pertanian />
 
       {/* Kesenian Section */}
-      <section
-        id="Kesenian"
-        className="py-20 bg-gradient-to-br from-purple-50 to-pink-50"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Music className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Kesenian Tradisional
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Melestarikan warisan budaya leluhur melalui berbagai bentuk
-              kesenian yang autentik
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {[
-              {
-                title: "Gamelan Jawa",
-                description:
-                  "Pertunjukan musik tradisional dengan alat musik gamelan",
-                color: "from-yellow-400 to-orange-500",
-              },
-              {
-                title: "Tari Srimpi",
-                description:
-                  "Tarian klasik yang menggambarkan keanggunan budaya Jawa",
-                color: "from-pink-400 to-purple-500",
-              },
-              {
-                title: "Wayang Kulit",
-                description:
-                  "Pertunjukan wayang dengan cerita-cerita pewayangan klasik",
-                color: "from-brown-400 to-yellow-600",
-              },
-              {
-                title: "Batik Tulis",
-                description:
-                  "Seni membatik dengan teknik tulis yang diwariskan turun-temurun",
-                color: "from-blue-400 to-indigo-500",
-              },
-            ].map((item, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div
-                  className={`w-full h-48 bg-gradient-to-br ${item.color} rounded-xl mb-4 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300 shadow-lg`}
-                >
-                  <Music className="h-12 w-12 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Pelestarian Budaya
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                  Sanggar Seni Tradisional
-                </h4>
-                <p className="text-gray-700 mb-4">
-                  Dusun Macanan memiliki sanggar seni yang aktif mengajarkan
-                  berbagai kesenian tradisional kepada generasi muda. Setiap
-                  minggu diadakan latihan rutin untuk melestarikan warisan
-                  budaya leluhur.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                  Festival Budaya Tahunan
-                </h4>
-                <p className="text-gray-700 mb-4">
-                  Setiap tahun diadakan festival budaya yang menampilkan seluruh
-                  kesenian tradisional dusun. Acara ini tidak hanya sebagai
-                  hiburan, tetapi juga sebagai sarana edukasi dan pelestarian
-                  budaya.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Kesenian />
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
