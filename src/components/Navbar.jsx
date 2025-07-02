@@ -3,6 +3,7 @@ import ToggleButton from "./Sidebar/ToggleButton";
 import { motion } from "framer-motion";
 import Links from "./Sidebar/Links";
 import { TreePine } from "lucide-react";
+import Logo from "../assets/tajuk.png";
 
 const variants = {
   open: {
@@ -72,7 +73,7 @@ export default function Navbar() {
         onClick={togglebut}
       >
         <div className="flex items-center space-x-2">
-          <img src="https://wisatatajuk.com/favicon-32x32.png" alt="" />
+          <img src={Logo} alt="" />
           <span
             className={`text-xl font-bold transition-colors duration-300 ${
               Open || !isTop ? "text-gray-800" : "text-white"

@@ -1,5 +1,6 @@
 import { TreePine } from "lucide-react";
 import React from "react";
+import Logo from "../assets/tajuk.png";
 
 function Footer() {
   return (
@@ -7,7 +8,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <img src="https://wisatatajuk.com/favicon-32x32.png" alt="" />
+            <img src={Logo} alt="Logo Desa Tajuk" />
             <span className="text-2xl font-bold">Dusun Macanan</span>
           </div>
           <p className="text-gray-400 mb-6">
