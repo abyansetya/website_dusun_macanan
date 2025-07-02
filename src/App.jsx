@@ -16,6 +16,7 @@ import Hero from "./components/Hero";
 import Lokasi from "./components/Lokasi";
 import Pertanian from "./components/Pertanian";
 import Kesenian from "./components/Kesenian";
+import Footer from "./components/Footer";
 
 export default function DusunMacananProfile() {
   const [activeSection, setActiveSection] = useState("home");
@@ -81,38 +82,16 @@ export default function DusunMacananProfile() {
           </div>
         </div>
       </div>
-
       {/* Hero Section */}
       <Hero />
-
       {/* Lokasi Section */}
       <Lokasi />
-
       {/* Pertanian Section */}
       <Pertanian />
-
       {/* Kesenian Section */}
       <Kesenian />
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <TreePine className="h-8 w-8 text-green-400" />
-              <span className="text-2xl font-bold">Dusun Macanan</span>
-            </div>
-            <p className="text-gray-400 mb-6">
-              Melestarikan tradisi, mengembangkan pertanian, membangun masa
-              depan
-            </p>
-            <div className="border-t border-gray-700 pt-6">
-              <p className="text-gray-500 text-sm">
-                © 2025 Dusun Macanan. Semua hak cipta dilindungi.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

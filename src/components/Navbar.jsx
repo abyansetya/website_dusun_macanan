@@ -72,10 +72,10 @@ export default function Navbar() {
         onClick={togglebut}
       >
         <div className="flex items-center space-x-2">
-          <TreePine className="h-8 w-8 text-green-600" />
+          <img src="https://wisatatajuk.com/favicon-32x32.png" alt="" />
           <span
             className={`text-xl font-bold transition-colors duration-300 ${
-              isTop ? "text-white" : "text-gray-800"
+              Open || !isTop ? "text-gray-800" : "text-white"
             }`}
             onClick={() => scrollToSection("home")}
           >
@@ -91,7 +91,7 @@ export default function Navbar() {
           variants={variants}
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
-          className="top-0 bottom-0 right-0 w-full bg-gray-300 fixed"
+          className="top-0 bottom-0 right-0 w-full bg-gradient-to-br from-green-50 to-yellow-50 fixed"
         >
           <Links Open={setOpen} />
         </motion.div>
@@ -107,7 +107,7 @@ export default function Navbar() {
           scale: 0.9,
         }}
       >
-        <ToggleButton Open={setOpen} />
+        <ToggleButton Open={setOpen} isOpen={Open} />
       </motion.div>
     </div>
   );

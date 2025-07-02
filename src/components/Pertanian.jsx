@@ -1,5 +1,6 @@
 import { Leaf, Users, Wheat } from "lucide-react";
 import React from "react";
+import pertanian from "../assets/pertanian.jpg";
 
 function Pertanian() {
   return (
@@ -61,15 +62,11 @@ function Pertanian() {
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Dusun Macanan menerapkan prinsip pertanian berkelanjutan yang
-                menghormati alam. Kami menggunakan teknik tradisional yang
-                dipadukan dengan inovasi modern untuk menghasilkan produk
-                pertanian yang sehat dan ramah lingkungan.
+                menghormati alam. Menggunakan teknik tradisional yang dipadukan
+                dengan inovasi modern untuk menghasilkan produk pertanian yang
+                sehat dan ramah lingkungan.
               </p>
               <div className="flex items-center space-x-4 text-sm text-gray-600">
-                <div className="flex items-center space-x-1">
-                  <Leaf className="h-4 w-4 text-green-500" />
-                  <span>100% Organik</span>
-                </div>
                 <div className="flex items-center space-x-1">
                   <Users className="h-4 w-4 text-blue-500" />
                   <span>Ekonomi Rakyat</span>
@@ -78,16 +75,12 @@ function Pertanian() {
             </div>
 
             <div className="relative">
-              <div className="w-full h-64 bg-gradient-to-br from-yellow-200 via-green-200 to-yellow-300 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <Wheat className="h-16 w-16 text-green-700 mx-auto mb-2" />
-                  <div className="text-green-800 font-semibold">
-                    Hasil Pertanian
-                  </div>
-                  <div className="text-green-600 text-sm">
-                    Berkualitas Tinggi
-                  </div>
-                </div>
+              <div className="w-full h-64 rounded-xl flex items-center justify-center">
+                <img
+                  src={pertanian}
+                  alt=""
+                  className="h-full object-cover  rounded-xl w-full"
+                />
               </div>
             </div>
           </div>

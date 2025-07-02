@@ -87,15 +87,16 @@ function Kesenian() {
                 hidup.
               </p>
             </div>
-            <div>
-              <p className="text-gray-700 mb-4">
-                WBU juga menjadi ruang pembelajaran budaya lintas generasi,
-                melibatkan anak-anak hingga dewasa secara aktif. Kostum yang
-                unik dan penuh karakter menambah daya tarik visual, memperkuat
-                identitas setiap pertunjukan. Berbasis komunitas, WBU menjadi
-                cerminan kebersamaan, di mana seni tumbuh dan hidup bersama
-                masyarakatnya
-              </p>
+            <div className="aspect-video w-full rounded-xl overflow-hidden">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/SLky-agyof0?si=wDnaXwpr1WpnfmV5"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>

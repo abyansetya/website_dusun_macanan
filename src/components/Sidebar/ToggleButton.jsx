@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function ToggleButton(props) {
   const [isTop, setIsTop] = useState(true);
-  const strokeColor = isTop ? "white" : "black";
+  const strokeColor = !isTop || props.isOpen ? "black" : "white";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +28,7 @@ export default function ToggleButton(props) {
       >
         <h1
           className={`${
-            isTop ? "text-white" : "text-gray-800"
+            props.isOpen || !isTop ? "text-gray-800" : "text-white"
           } font-poppins text-[12px] mb-1 mr-2 cursor-pointer`}
         >
           MENU
