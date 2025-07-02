@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import React from "react";
-import Pemandangan from "./../assets/pemandangan.jpg";
+import Pemandangan from "./../assets/a.jpg";
 
 function Hero() {
   const scrollToSection = (id) => {
