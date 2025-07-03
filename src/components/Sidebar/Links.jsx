@@ -30,6 +30,7 @@ const Links = (props) => {
   function toggle() {
     props.Open((prev) => !prev);
   }
+
   return (
     <motion.div
       variants={variants}

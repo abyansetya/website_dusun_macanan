@@ -3,11 +3,21 @@ import React from "react";
 import Logo from "../assets/tajuk.png";
 
 function Footer() {
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
+          <div
+            className="flex items-center justify-center space-x-2 mb-4 hover:cursor-pointer hover:scale-105 transition duration-200"
+            onClick={() => scrollToSection("home")}
+          >
             <img src={Logo} alt="Logo Desa Tajuk" />
             <span className="text-2xl font-bold">Dusun Macanan</span>
           </div>

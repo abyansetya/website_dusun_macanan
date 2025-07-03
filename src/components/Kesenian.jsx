@@ -4,6 +4,9 @@ import topeng_ireng from "../assets/topeng_ireng.jpg";
 import idakep from "../assets/idakep.jpg";
 import warog from "../assets/warog.jpg";
 import jaranan from "../assets/jaranan.jpg";
+import { PhoneCall } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 
 function Kesenian() {
   return (
@@ -69,7 +72,7 @@ function Kesenian() {
           ))}
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-lg">
+        <div id="Contact" className="bg-white p-8 rounded-2xl shadow-lg">
           <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             Pelestarian Budaya
           </h3>
@@ -86,6 +89,25 @@ function Kesenian() {
                 dimainkan oleh warga sendiri menghadirkan nuansa hangat dan
                 hidup.
               </p>
+              <div className="flex space-x-2 mt-2 items-center">
+                <PhoneCall />
+                <p>+62 882-7860-5220</p>
+              </div>
+              <motion.div
+                className="flex space-x-2 mt-2 items-center hover:font-bold transition-all"
+                whileTap={{
+                  scale: 0.9,
+                }}
+              >
+                <Instagram />
+                <a
+                  href="https://instagram.com/wahyubudiutomo1991"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @wahyubudiutomo1991
+                </a>
+              </motion.div>
             </div>
             <div className="aspect-video w-full rounded-xl overflow-hidden">
               <iframe
